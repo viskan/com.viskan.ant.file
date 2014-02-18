@@ -33,7 +33,17 @@ Usage
 
 From Ant:
 ```xml
-	<vFile destinationDir="${my.path}" wildcard="Result*.xml" property="stable.result" failonerror="false" />
+	<!-- Copy-paste com.viskan.ant.file-1.0-SNAPSHOT.jar into /lib folder -->
+    <path id="classpath">
+        <fileset dir="lib" includes="**/*.jar"/>
+    </path>
+	<taskdef name="vFile" classname="com.viskan.ant.VFileTask" classpathref="classpath"/>
+
+	<target name="test vFile">
+		<vFile destinationDir="${my.path}" wildcard="Result*.xml" property="my.result" failonerror="false" />
+		<echo message="Fetched the latest modified file: ${my.result}" />
+	</target>
+
 ```
 
 The calls will look for a latest modified file in the "destinationDir" value with "wildcard" value and set the found file in "property" value.
