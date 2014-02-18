@@ -7,19 +7,19 @@ Background
 ==========
 
 Ant does not work properly with unc path:
-<timestampselector property="latest.database.backup">
-<path>
-	<fileset dir="\\192.168.10.33\SQLBackups\SQL2012\RamosKapTest26">
-		<include name="*.*" />
-	</fileset>
-</path>
-</timestampselector>
+	<timestampselector property="latest.database.backup">
+	<path>
+		<fileset dir="\\192.168.10.33\SQLBackups\SQL2012\RamosKapTest26">
+			<include name="*.*" />
+		</fileset>
+	</path>
+	</timestampselector>
 
-<echo message="${latest.database.backup}" />
+	<echo message="${latest.database.backup}" />
 
-The script has long timeout.
+	The script has long timeout.
 
-So, was decided own ant task to fetch the latest file.
+	So, was decided to create own ant task to fetch the latest file.
 
 Usage
 =====
