@@ -47,4 +47,7 @@ From Ant:
 ```
 
 The calls will look for a latest modified file in the "destinationDir" value with "wildcard" value and set the found file in "property" value.
-If no file find, the build will be failed. If failonerror=false, the build will continue and will return null in the "property" value.
+
+If no file fond, the build will be failed. 
+
+If failonerror=false, the build will continue and will return null in the "property" value.
