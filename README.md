@@ -6,7 +6,7 @@ Ant task to work with files
 Background
 ==========
 
-Ant does not work properly with unc path:
+Ant does not work properly with UNC path:
 
 ```xml
 	<timestampselector property="latest.database.backup">
@@ -21,6 +21,12 @@ Ant does not work properly with unc path:
 ```
 
 The script has long timeout.
+
+The following ant call resolves UNC path and retuns the latest modified file in the "destinationDir" value.
+```xml
+	<vFile destinationDir="${my.path}" wildcard="Result*.xml" property="stable.result" />
+```
+
 
 Usage
 =====
